@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Snake_Test" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Snake_Test" options="-bootclasspath &quot;E:\Programme\JetBrains\IntelliJ IDEA 2018.3\jre64\lib\resources.jar;E:\Programme\JetBrains\IntelliJ IDEA 2018.3\jre64\lib\rt.jar;E:\Programme\JetBrains\IntelliJ IDEA 2018.3\jre64\lib\sunrsasign.jar;E:\Programme\JetBrains\IntelliJ IDEA 2018.3\jre64\lib\jsse.jar;E:\Programme\JetBrains\IntelliJ IDEA 2018.3\jre64\lib\jce.jar;E:\Programme\JetBrains\IntelliJ IDEA 2018.3\jre64\lib\charsets.jar;E:\Programme\JetBrains\IntelliJ IDEA 2018.3\jre64\lib\jfr.jar;E:\Programme\JetBrains\IntelliJ IDEA 2018.3\jre64\classes;E:/Program Files (x86)/JDK/jre/lib/jfxrt.jar&quot; -Xlint:unchecked" />
+    </option>
+  </component>
+</project>

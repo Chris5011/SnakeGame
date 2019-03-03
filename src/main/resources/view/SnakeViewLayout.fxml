@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="backPane" maxHeight="700.0" maxWidth="500.0" minHeight="700.0" minWidth="500.0" prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.Chris5011.projects.view.SnakeViewLayoutController">
+    <bottom>
+        <AnchorPane fx:id="statusbar" prefHeight="121.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="22.0" layoutY="36.0" text="Points: " AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="22.0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+                <Label fx:id="lblPoints" layoutX="80.0" layoutY="38.0" prefHeight="27.0" prefWidth="83.0" AnchorPane.bottomAnchor="56.0" AnchorPane.leftAnchor="80.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Button fx:id="btnStart" layoutX="421.0" layoutY="28.0" mnemonicParsing="false" onAction="#startGame" text="Start" AnchorPane.bottomAnchor="68.0" AnchorPane.rightAnchor="38.0" />
+            <Button fx:id="btnUp" disable="true" layoutX="139.0" layoutY="-8.0" mnemonicParsing="false" onAction="#changeFacingOfSnakeUp" prefHeight="25.0" prefWidth="25.0" text="U" visible="false" />
+            <Button fx:id="btnDown" disable="true" layoutX="139.0" layoutY="41.0" mnemonicParsing="false" onAction="#changeFacingOfSnakeDown" prefHeight="25.0" prefWidth="25.0" text="D" visible="false" />
+            <Button fx:id="btnRight" disable="true" layoutX="164.0" layoutY="16.0" mnemonicParsing="false" onAction="#changeFacingOfSnakeRight" prefHeight="25.0" prefWidth="25.0" text="R" visible="false" />
+            <Button fx:id="btnLeft" disable="true" layoutX="114.0" layoutY="16.0" mnemonicParsing="false" onAction="#changeFacingOfSnakeLeft" prefHeight="25.0" prefWidth="25.0" text="L" visible="false" />
+            <StackPane layoutX="214.0" layoutY="10.0" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="214.0">
+               <children>
+                  <Group>
+                     <children>
+                        <ImageView fx:id="imgUp" fitHeight="25.0" fitWidth="25.0" layoutX="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../textures/arrows/Arrow_UP.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgDown" fitHeight="25.0" fitWidth="25.0" layoutX="20.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../textures/arrows/Arrow_DOWN.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgLeft" fitHeight="25.0" fitWidth="25.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../textures/arrows/Arrow_LEFT.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgRight" fitHeight="25.0" fitWidth="25.0" layoutX="40.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../textures/arrows/Arrow_RIGHT.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Group>
+               </children>
+            </StackPane>
+            <Slider fx:id="sliderGameWidth" blockIncrement="50.0" layoutX="14.0" layoutY="72.0" majorTickUnit="50.0" max="450.0" min="100.0" minorTickCount="50" prefHeight="38.0" prefWidth="180.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="450.0" />
+            <Slider fx:id="sliderGameHeight" blockIncrement="50.0" layoutX="306.0" layoutY="72.0" majorTickUnit="50.0" max="450.0" min="100.0" minorTickCount="50" prefHeight="38.0" prefWidth="180.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="450.0" />
+            </children>
+        </AnchorPane>
+    </bottom>
+   <center>
+      <AnchorPane fx:id="gameArea" maxHeight="450.0" maxWidth="450.0" minHeight="450.0" minWidth="450.0" prefHeight="450.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="130.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+         <children>
+            <ProgressBar fx:id="speedBar" layoutX="131.0" layoutY="14.0" prefWidth="350.0" progress="0.0" />
+            <ProgressBar fx:id="freezeBar" layoutX="131.0" layoutY="41.0" prefWidth="350.0" progress="0.0" />
+            <ProgressBar fx:id="unwrapBar" layoutX="131.0" layoutY="69.0" prefWidth="350.0" progress="0.0" />
+            <Label layoutX="14.0" layoutY="15.0" text="Speed remaining:" />
+            <Label layoutX="14.0" layoutY="42.0" text="Freeze remaining:" />
+            <Label layoutX="15.0" layoutY="70.0" text="Unwrap remaining:" />
+            <CheckBox fx:id="checkClassic" layoutX="15.0" layoutY="99.0" mnemonicParsing="false" onAction="#toggleClassicMode" prefHeight="17.0" prefWidth="100.0" text="Classic Mode" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
